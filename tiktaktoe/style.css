@@ -1,0 +1,35 @@
+ body {
+    background-color: rgb(214, 183, 255);    
+
+}
+
+
+.container {
+    
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    
+    
+}
+
+.cell {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    line-height: 115px;
+    font-size: 60px;
+    font-family: Brush Script MT;
+    cursor: pointer;
+    align-self: stretch;
+}
+
+.ilmoitus {
+
+}
