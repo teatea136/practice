@@ -1,34 +1,92 @@
  body {
-    background-color: rgb(214, 183, 255);    
+    background-color: rgb(197, 199, 191);    
 
 }
 
-
-.container {
-    
+.lines {
+    pointer-events: none;
+    background: url('your_transparent.png');
+    background-color: rgba(204, 23, 23, 0);
     height: 350px;
     width: 350px;
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 1%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
+}
+
+#vll {
+    position: absolute;
+    top: 7%;
+    left: 32%;
+    border-left: 2px solid rgb(0, 0, 0);
+    height: 85%;
+}
+
+#vlr {
+    position: absolute;
+    top: 7%;
+    left: 66%;
+    border-left: 2px solid rgb(0, 0, 0);
+    height: 85%;
+}
+
+#hlt {
+    position: absolute;
+    top: 32%;
+    left: 7%;
+    border-top: 2px solid rgb(0, 0, 0);
+    width: 85%;
+}
+
+#hlt {
+    position: absolute;
+    top: 66%;
+    left: 7%;
+    border-top: 2px solid rgb(0, 0, 0);
+    width: 85%;
+}
+
+.container {
+    background-color: rgb(212, 200, 176);
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='40' ry='40' stroke='black' stroke-width='25' stroke-dasharray='1%2c 2' stroke-dashoffset='40' stroke-linecap='butt'/%3e%3c/svg%3e");
+    border-radius: 40px;
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    padding: 1%;
     transform: translate(-50%, -50%);
     text-align: center;
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 33% 33% 33%;
-    
-    
+    gap: 1% 1%;
+    grid-template-areas: 
+    "top top top" 
+    "mid mid mid"
+    "bot bot bot";
+
 }
 
 .cell {
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(163, 163, 163, 0);
+    height: 98%;
+    width: 98%;
     line-height: 115px;
     font-size: 60px;
-    font-family: Brush Script MT;
+    font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
-    align-self: stretch;
+    align-self: center;
+    place-self: center;
 }
+
+
 
 .ilmoitus {
 
