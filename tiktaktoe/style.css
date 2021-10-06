@@ -1,3 +1,7 @@
+*{
+    font-family: 'Varela Round', sans-serif;
+}
+
  body {
     background-color: rgb(197, 199, 191);    
 
@@ -20,34 +24,34 @@
 
 #vll {
     position: absolute;
-    top: 7%;
-    left: 32%;
+    top: 5%;
+    left: 34%;
     border-left: 2px solid rgb(0, 0, 0);
-    height: 85%;
+    height: 90%;
 }
 
 #vlr {
     position: absolute;
-    top: 7%;
-    left: 66%;
+    top: 5%;
+    left: 65%;
     border-left: 2px solid rgb(0, 0, 0);
-    height: 85%;
+    height: 90%;
+}
+
+#hlb {
+    position: absolute;
+    top: 34%;
+    left: 5%;
+    border-top: 2px solid rgb(0, 0, 0);
+    width: 90%;
 }
 
 #hlt {
     position: absolute;
-    top: 32%;
-    left: 7%;
+    top: 65%;
+    left: 5%;
     border-top: 2px solid rgb(0, 0, 0);
-    width: 85%;
-}
-
-#hlt {
-    position: absolute;
-    top: 66%;
-    left: 7%;
-    border-top: 2px solid rgb(0, 0, 0);
-    width: 85%;
+    width: 90%;
 }
 
 .container {
@@ -66,7 +70,7 @@
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 33% 33% 33%;
-    gap: 1% 1%;
+    
     grid-template-areas: 
     "top top top" 
     "mid mid mid"
@@ -79,15 +83,51 @@
     height: 98%;
     width: 98%;
     line-height: 115px;
-    font-size: 60px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 68px;
+    font-family: 'Varela Round', sans-serif;
     cursor: pointer;
     align-self: center;
     place-self: center;
 }
 
+#aloitusNappi {
+    background-color: rgb(192, 105, 23);
+    height: 50px;
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 17%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    cursor: pointer;
+    border: double 4px;
+}
+
+#start {
+    position: absolute;
+    left: 17%;
+}
+
+#ilmoitus {
+    background-color: rgba(134, 150, 173, 0.87);
+    border-radius: 40px;
+    height: 368px;
+    width: 368px;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50% 50%;
+}
 
 
-.ilmoitus {
-
+#ilmoitusNappi {
+    background-color: rgb(192, 105, 23);
+    height: 15px;
+    width: 30px;
+    justify-self: center;
+    align-self: end;
 }

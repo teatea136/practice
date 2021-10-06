@@ -1,16 +1,35 @@
 
-let vuoro = "X";
-let peliKaynnissa = true;
+let vuoro = "";
+let peliKaynnissa = false;
 let sisalto = 
-["", "", "", 
-"", "", "",
-"", "", ""];
+["T", "I", "C", 
+"T", "A", "C",
+"T", "O", "E"];
+document.querySelector('#aloitusNappi').style.visibility = "visible";
+document.querySelector('#ilmoitus').style.visibility = "hidden";
 
+
+
+
+const klikkaaAloita = () => {
+    pelinKaynnistys();
+    document.querySelector('#aloitusNappi').style.visibility = "hidden";
+}
+
+const pelinKaynnistys = () => {
+    peliKaynnissa = true;
+    vuoro = "X";
+    sisalto = 
+    ["", "", "", 
+    "", "", "",
+    "", "", ""];
+    document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
+}
 
 const klikkaa = (klikattuRuutu) => {
     const ruutu = klikattuRuutu.target;
     const ruutuNro = parseInt(ruutu.getAttribute('id'));
-    if (sisalto[ruutuNro] === "") {
+    if (sisalto[ruutuNro] === "" && peliKaynnissa) {
         if (vuoro === "X") {
             sisalto[ruutuNro] = "X";
             document.getElementById(ruutuNro.toString()).innerHTML = "X";
@@ -26,9 +45,6 @@ const klikkaa = (klikattuRuutu) => {
 
 console.log(sisalto);
 const vuoronVaihto = () => {
-    if (!peliKaynnissa) {
-        return;
-    }
     if (vuoro === "X") {
         vuoro = "O";
         return;
@@ -70,29 +86,30 @@ const testaaVoittorivi = () => {
     
     if (peliVoitettu) {
         peliKaynnissa = false;
+        document.querySelector('#ilmoitus').style.visibility = "visible";
+        document.querySelector('#ilmoitusTeksti').innerHTML =  `VOITTAJA ON ${vuoro}`
+        return;
     }
 
     let tasaPeli = !sisalto.includes("");
     if (tasaPeli) {
         peliKaynnissa = false;
+        document.querySelector('#ilmoitus').style.visibility = "visible";
+        document.querySelector('#ilmoitusTeksti').innerHTML =  `TASAPELI`
         return;
     }
-    vuoronVaihto();
+    
+    if (peliKaynnissa) {
+        vuoronVaihto();
+    }
 }
 
-const pelinUudelleenKaynnistys = () => {
-    peliKaynnissa = true;
-    vuoro = "X";
-    sisalto = 
-    ["", "", "", 
-    "", "", "",
-    "", "", ""];
-    document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
-}
+
 
 
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', klikkaa));
-document.querySelector('.ilmoitus').addEventListener('click', pelinUudelleenKaynnistys);
+document.querySelector('#aloitusNappi').addEventListener('click', klikkaaAloita);
+document.querySelector('#ilmoitusNappi').addEventListener('click', alkuTila);
 
 
