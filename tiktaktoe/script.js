@@ -11,6 +11,7 @@ document.querySelector('#ilmoitus').style.visibility = "hidden";
 
 
 
+
 const klikkaaAloita = () => {
     pelinKaynnistys();
     document.querySelector('#aloitusNappi').style.visibility = "hidden";
@@ -24,6 +25,8 @@ const pelinKaynnistys = () => {
     "", "", "",
     "", "", ""];
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
+    document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', klikkaa));
+    document.querySelectorAll('.cell').forEach(cell => cell.style.cursor = 'pointer');
 }
 
 const klikkaa = (klikattuRuutu) => {
@@ -104,12 +107,18 @@ const testaaVoittorivi = () => {
     }
 }
 
+const klikkaaReplay = () => {
+    document.querySelector('#ilmoitus').style.visibility = "hidden";
+    document.getElementById('ilmoitusTeksti').innerHTML = "";
+    pelinKaynnistys();
+}
 
 
 
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', klikkaa));
+
+
 document.querySelector('#aloitusNappi').addEventListener('click', klikkaaAloita);
-document.querySelector('#ilmoitusNappi').addEventListener('click', alkuTila);
+document.querySelector('#ilmoitusNappi').addEventListener('click', klikkaaReplay);
 
 
