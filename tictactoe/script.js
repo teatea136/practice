@@ -36,13 +36,13 @@ const klikkaa = (klikattuRuutu) => {
         if (vuoro === "X") {
             sisalto[ruutuNro] = "X";
             document.getElementById(ruutuNro.toString()).innerHTML = "X";
-            vuoronVaihto();
         }
         if (vuoro === "O") {
             sisalto[ruutuNro] = "O"
             document.getElementById(ruutuNro.toString()).innerHTML = "O"
-            vuoronVaihto();
+            
         }
+        vuoronVaihto();
     }
     console.log(vuoro);
     testaaVoittorivi();
@@ -103,6 +103,7 @@ const testaaVoittorivi = () => {
         document.querySelector('#ilmoitusTeksti').innerHTML =  `TASAPELI`
         return;
     }
+
 }
 
 const klikkaaReplay = () => {
