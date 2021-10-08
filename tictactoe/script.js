@@ -36,10 +36,12 @@ const klikkaa = (klikattuRuutu) => {
         if (vuoro === "X") {
             sisalto[ruutuNro] = "X";
             document.getElementById(ruutuNro.toString()).innerHTML = "X";
+            vuoronVaihto();
         }
         if (vuoro === "O") {
             sisalto[ruutuNro] = "O"
             document.getElementById(ruutuNro.toString()).innerHTML = "O"
+            vuoronVaihto();
         }
     }
     console.log(vuoro);
@@ -100,10 +102,6 @@ const testaaVoittorivi = () => {
         document.querySelector('#ilmoitus').style.visibility = "visible";
         document.querySelector('#ilmoitusTeksti').innerHTML =  `TASAPELI`
         return;
-    }
-    
-    if (peliKaynnissa) {
-        vuoronVaihto();
     }
 }
 
