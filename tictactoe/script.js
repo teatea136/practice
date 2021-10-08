@@ -42,15 +42,16 @@ const klikkaa = (klikattuRuutu) => {
             document.getElementById(ruutuNro.toString()).innerHTML = "O"
             
         }
+        testaaVoittorivi();
         vuoronVaihto();
     }
     console.log(vuoro);
-    testaaVoittorivi();
+    
 }
 
 console.log(sisalto);
 const vuoronVaihto = () => {
-    if (vuoro === "X") {
+    if (vuoro === "X" ) {
         vuoro = "O";
         return;
     }
@@ -59,6 +60,7 @@ const vuoronVaihto = () => {
         return;
     } else {
         console.log("Virhe vuoron vaihdossa.")
+        return;
     }
 }
 
